@@ -4,30 +4,19 @@ console.log("03 - poo ");
 /**
  * ça c'est de l'ES6 
  */
-class Personne {
-    nom;
-    prenom;
-    pseudo;
-
-    constructor(nom, prenom, pseudo) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.pseudo = pseudo;
-    }
+function Personne(nom, prenom, pseudo) {
+    this.nom = nom;
+    this.prenom = prenom;
+    this.pseudo = pseudo;
     /**
      * 
      * @returns une chaine de caractére formaté contenant les valeurs de propriétés de l'objet
      */
-    getNomComplet() {
+    this.getNomComplet = function () {
         return this.nom + " " + this.prenom + " " + this.pseudo;
     }
 
 }
-
-
-
-let jules = new Personne('Jules', 'LEMAIRE', 'jules77');
-let paul = new Personne("Paul", "LEMAIRE", "paul44");
 
 function afficherPersonne(personne) {
 
@@ -36,6 +25,12 @@ function afficherPersonne(personne) {
     console.log(personne.pseudo);
     console.log(personne.getNomComplet());
 }
+
+
+
+let jules = new Personne('Jules', 'LEMAIRE', 'jules77');
+let paul = new Personne("Paul", "LEMAIRE", "paul44");
+
 
 afficherPersonne(jules);
 afficherPersonne(paul);
